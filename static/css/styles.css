@@ -1,0 +1,184 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Oxanium:wght@400;600;700&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 3.5rem;
+
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --first-color: hsla(295, 34%, 52%, 0.884);
+  --second-color: hsla(273, 95%, 36%, 0.973);
+  --text-color: hsl(203, 8%, 98%);
+  --text-color-light: hsl(203, 8%, 80%);
+  --body-color: hsl(259, 20%, 18%);
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: 'Oxanium', cursive;
+  --biggest-font-size: 2.25rem;
+  --h2-font-size: 1.25rem;
+  --normal-font-size: .938rem;
+  --smaller-font-size: .75rem;
+
+  /*========== Font weight ==========*/
+  --font-semi-bold: 600;
+
+  /*========== z index ==========*/
+  --z-fixed: 100;
+  --fixed-border-radius: 0.5rem;
+}
+
+@media screen and (min-width: 1024px) {
+  :root {
+    --biggest-font-size: 4rem;
+    --h2-font-size: 1.5rem;
+    --normal-font-size: 1rem;
+    --smaller-font-size: .813rem;
+  }
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--body-color);
+  color: var(--text-color);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+/*=============== HOME ===============*/
+.home {
+  position: relative;
+}
+
+.home__container {
+  position: relative;
+  padding: 7rem 0 2rem;
+}
+
+.home__title {
+  font-size: var(--biggest-font-size);
+  margin-bottom: .75rem;
+}
+
+.home__title span {
+  background: linear-gradient(90deg, var(--second-color) 0%, var(--first-color) 100%);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.home__description {
+  color: var(--text-color-light);
+  margin-bottom: 1.5rem;
+}
+
+.home__button {
+  display: inline-block;
+  background: linear-gradient(95deg, var(--second-color) 0%, var(--first-color) 100%);
+  padding: 1rem 1rem;
+  border-radius: .25rem;
+  color: var(--text-color);
+  font-weight: var(--font-semi-bold);
+  transition: box-shadow .4s;
+  margin: 5px;
+}
+
+.home__button:hover {
+  box-shadow: 0 8px 48px hsla(270, 82%, 40%, 0.5);
+}
+
+.home__group {
+  position: relative;
+}
+
+.home__images,
+.home__data {
+  display: grid;
+}
+
+.home__img-logo {
+  width: 250px;
+  justify-self: center;
+}
+
+.home__img-logo img {
+  filter: drop-shadow(0 4px 32px hsla(293, 92%, 29%, 0.5));
+  animation: float-eth 4s ease-in-out infinite;
+}
+
+.home__img-orbe {
+  width: 280px;
+  justify-self: center;
+}
+
+
+/* Animation ethereum */
+@keyframes float-eth {
+  0% {
+    transform: translateY(0.5rem);
+  }
+
+  50% {
+    transform: translateY(2rem);
+  }
+
+  100% {
+    transform: translateY(0.5rem);
+  }
+}
+
+
+/* Glass */
+.glass {
+  -webkit-backdrop-filter: blur(8px);
+  /* Safari 9+ */
+  /* backdrop-filter: blur(8px);  */
+  box-shadow: 0px 10px 15px 10px rgb(0 0 0 / 15%);
+  background-color: rgba(154, 42, 219, 0.15);
+}
+
+
+#captcha-overlay {
+  display: none;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.79);
+  z-index: 10000;
+}
+#captcha-overlay #captcha-box {
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+
+}
+
+#captcha-overlay .Title {
+  color: black;
+  font-weight: bolder;
+  margin-bottom: 10px;
+  text-align: center;
+}

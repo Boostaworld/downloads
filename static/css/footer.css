@@ -1,0 +1,33 @@
+footer {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    margin-top: 30px;
+    padding: 20px 10px;
+}
+
+footer .social-icons {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    font-size: var(--big-font-size);
+    gap: 1rem;
+}
+
+footer .social-icons a{
+    color: white;
+    font-size: 2rem;
+    
+}
+
+footer .end-text {
+    text-align: center;
+}
+
+
+footer .social-icons a:hover{
+    background: linear-gradient(90deg, var(--second-color) 0%, var(--first-color) 100%);
+    -webkit-background-clip: text;
+    color: transparent;
+}
